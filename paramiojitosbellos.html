@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti</title>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #f8eadd, #f3d9c4, #eed2b9);
+        background-size: 200% 200%;
+        animation: fondo 10s ease infinite;
+        font-family: "Georgia", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes fondo {
+        0%{ background-position: 0% 50%; }
+        50%{ background-position: 100% 50%; }
+        100%{ background-position: 0% 50%; }
+    }
+
+    .carta{
+        background: #fff9f4ee;
+        padding: 30px;
+        max-width: 750px;
+        border-radius: 15px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+        border: 2px solid #e3c4a8;
+        animation: fadeIn 2s ease forwards;
+        position: relative;
+        overflow: hidden;
+    }
+
+    @keyframes fadeIn{
+        from{ opacity: 0; transform: translateY(20px); }
+        to{ opacity: 1; transform: translateY(0); }
+    }
+
+    /* Texto tipo máquina de escribir */
+    #texto{
+        font-size: 20px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+        border-right: 2px solid #5c4033;
+        width: fit-content;
+        animation: cursor 0.9s infinite;
+        color: #5c4033;
+    }
+
+    @keyframes cursor{
+        0%{ border-color: transparent; }
+        50%{ border-color: #5c4033; }
+        100%{ border-color: transparent; }
+    }
+
+    /* Corazones animados en esquinas */
+    .corazon{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background: #ff4d6d;
+        transform: rotate(45deg);
+        animation: flotar 5s ease-in-out infinite;
+        opacity: 0.8;
+    }
+
+    .corazon::before,
+    .corazon::after{
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background: #ff4d6d;
+        border-radius: 50%;
+    }
+    .corazon::before{ top: -12px; left: 0; }
+    .corazon::after{ left: -12px; top: 0; }
+
+    @keyframes flotar {
+        0%{ transform: translateY(0) rotate(45deg); }
+        50%{ transform: translateY(-15px) rotate(45deg); }
+        100%{ transform: translateY(0) rotate(45deg); }
+    }
+
+    .c1{ top: 10px; left: 10px; animation-delay: 0s; }
+    .c2{ top: 10px; right: 10px; animation-delay: 1s; }
+    .c3{ bottom: 10px; left: 10px; animation-delay: 2s; }
+    .c4{ bottom: 10px; right: 10px; animation-delay: 3s; }
+
+    /* Ojos */
+    .ojos{
+        display: block;
+        width: 320px;
+        margin: 40px auto 10px auto;
+    }
+
+    .frase-final{
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #4a3328;
+        margin-top: 5px;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="carta">
+
+    <!-- Corazones en esquinas -->
+    <div class="corazon c1"></div>
+    <div class="corazon c2"></div>
+    <div class="corazon c3"></div>
+    <div class="corazon c4"></div>
+
+    <!-- Texto -->
+    <div id="texto"></div>
+
+    <div class="frase-final">Tus ojos son mi cielo y mi universo entero.</div>
+
+</div>
+
+<script>
+const carta = `
+Hoy quiero que leas esto con calma… porque cada palabra está escrita pensando en ti.
+
+Sé que a veces el mundo puede pesar, que hay días en los que cuesta levantarse, en los que la cabeza se llena de dudas y el corazón de preguntas. 
+Pero quiero que sepas algo muy importante: tú eres una de las personas más fuertes, más valiosas y más lindas que he conocido en toda mi vida.
+
+Admiro tu forma de ser.
+Admiro la manera en la que te esfuerzas, incluso cuando nadie más lo ve.
+Admiro tu sensibilidad, tu inteligencia, tu corazón noble, tu forma de cuidar a los demás, y tu forma de iluminar lugares sin darte cuenta.
+
+Tienes algo muy especial… algo que no se encuentra en cualquier persona.
+Tienes una esencia propia, una presencia tan tuya, tan auténtica, que hace que todo lo que tocas tenga un sentido diferente.
+
+Y sí… también te quiero. Te quiero muchísimo.
+Te quiero por tu personalidad tan única, por lo que transmites, por lo que eres ahora, por lo que fuiste y por lo que estás creciendo a ser.
+Te quiero porque contigo la vida se siente más suave, más tranquila, más bonita.
+
+Tal vez tú no ves todo lo que yo veo en ti.
+Pero yo sí veo tu esfuerzo.
+Yo sí veo tu luz.
+Yo sí veo tu capacidad de salir adelante, incluso cuando te sientes cansada.
+Yo sí veo la manera en la que te levantas, aunque por dentro no siempre tengas fuerzas.
+Y eso… eso me inspira. Me inspira demasiado.
+
+Quiero que entiendas que no estás sola.
+Que si un día te duele el alma, aquí estoy.
+Que si te sientes perdida, yo camino contigo.
+Que si te falta motivación, yo te la recuerdo.
+Y si un día sientes que no puedes más, yo voy a recordarte todo lo que vales.
+
+Porque vales muchísimo.
+Vales por tu corazón, por tu esencia, por tu historia, por tus heridas y por tus ganas de seguir adelante.
+Vales por cómo miras, por cómo hablas, por cómo te emocionas, por cómo sientes.
+
+Y hoy, más que decirte que te quiero, quiero recordarte esto:
+
+Mereces lo bonito.
+Mereces la paz.
+Mereces el amor sincero.
+Mereces que te hablen con cariño, que te cuiden, que te respeten y que te vean como la persona especial que eres.
+
+Ojalá hoy te abraces fuerte.
+Ojalá recuerdes quién eres.
+Ojalá no olvides nunca lo que significas.
+
+Y si algún día te sientes pequeña…
+Aquí estoy yo para recordarte lo grande que eres.
+
+Te quiero mucho… más de lo que este texto alcanza a escribir.
+`;
+
+let i = 0;
+function typeWriter(){
+    if(i < carta.length){
+        document.getElementById("texto").textContent += carta.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
